@@ -10,9 +10,9 @@
     height: 100px;
     background-color: white;
     overflow: hidden;
-    transition: height 0.5s;
-
     padding:0 100px;
+    transition:height 0.3s, padding 0.3s;
+
     z-index: 9999;
 }
 .header::before {
@@ -24,8 +24,8 @@
     height: 1px;
     background: rgba(0,0,0,0.1);
     /* 투명하기 때문에 안보여요 */
-    opacity: 0;
-    transition: opacity 0.5s;
+    /* opacity: 0;
+    transition: opacity 0.5s; */
 }
 .header-active {
     height: 260px !important;
@@ -36,13 +36,25 @@
 }
 .logo {
     margin-top:35px;
+    transition:margin 0.3s;
 }
 .nav {
     margin-left:240px;
+    transition:margin 0.5s;
+}
+.nav-blue-bar { 
+    display: block;
+    position:absolute;
+    left:0;
+    top:100px;
+    width: 00px;
+    height: 1px;
+    background: #0072ff;
 }
 .gnb {
     display: flex;
     gap: 0 50px;
+    transition:gap 0.5s;
 }
 .gnb > li {
     /* position: relative; */
@@ -100,6 +112,52 @@
     font-family: "Noto Sans KR";
     white-space: nowrap;
 }
-.submenu li a:hover {
-    color:#999;
+/* header 반응형 */
+@media screen and (max-width:1720px) {
+    .nav {
+        margin-left:90px;
+    }
 }
+@media screen and (max-width:1560px) {
+    .header {
+        padding:0 70px;
+    }
+    .gnb {
+        gap:0 30px;
+    }
+}
+@media screen and (max-width:1400px) {
+    .side-wrap {
+        display: none;
+    }
+}
+@media screen and (max-width:1200px) {
+    .header {
+        padding:0 40px;
+    }
+    .nav {
+        margin-left:0;
+    }
+}
+@media screen and (max-width:1080px) {
+    .gnb > li > a {
+        font-size: 16px;
+    }
+}
+@media screen and (max-width:1020px) {
+    .gnb {
+        gap:0 20px;
+    }
+}
+@media screen and (max-width:1000px) {
+    .header {
+        height: 75px;
+    }
+    .logo {
+        margin-top:20px;
+    }
+    .nav {
+        display: none;
+    }
+
+}   
