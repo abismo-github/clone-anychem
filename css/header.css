@@ -1,5 +1,7 @@
 .header { 
-    position: relative;
+    position: fixed;
+    left:0;
+    top:0;
     display: flex;
     /* 기본으로 적용되어 있는 기능
     flex-direction: row;
@@ -14,6 +16,12 @@
     transition:height 0.3s, padding 0.3s;
 
     z-index: 9999;
+}
+.header-fixed {
+    position: fixed;
+    left:0;
+    top:0;
+    width: 100%;
 }
 .header::before {
     content: "";
@@ -152,6 +160,7 @@
 @media screen and (max-width:1000px) {
     .header {
         height: 75px;
+        padding: 0 20px;
     }
     .logo {
         margin-top:20px;
